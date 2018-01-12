@@ -1,0 +1,34 @@
+@import "mixin";
+/*tabs --------------start*/
+.tabs{
+  @include ul-reset();
+  width:100%;
+  background-color: #fff;
+  li{
+    display:inline-block;
+    width:50%;
+    float:left;
+    padding:15px 0;
+    text-align: center;
+    border-bottom:$border;
+    position:relative;
+    cursor: pointer;
+    &:after{
+      content:"";
+      height:4px;
+      width:100%;
+      left:-100%;
+      position:absolute;
+      bottom:0;
+      @include transition(left);
+    }
+    &.active{
+      color:$theme-color;
+      &:after{
+        left:0;
+        background-color: $theme-color;
+      }
+    }
+  }
+}
+/*tabs --------------end*/

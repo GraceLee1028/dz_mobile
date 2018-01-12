@@ -1,0 +1,56 @@
+/*color 样式*/
+@import "mixin";
+.color-theme{
+  color: $theme-hover-color !important;
+}
+.color-white{
+  color:#fff !important;
+}
+.color-green{
+  color:$color-green !important;
+}
+.color-tip{
+  color: $color-yellow !important;
+}
+.color-blue{
+  color:$color-blue !important;
+}
+.color-link{
+  color:$color-link !important;
+}
+.color-black{
+  color:$color !important;
+}
+.color-gray{
+  color:$gray !important;
+}
+.color-fail{
+  color:$color-danger !important;
+}
+.leaui-bg-red{
+  color:#fff;
+  background-color: $color-danger!important;
+}
+.leaui-bg-green{
+  color:#fff;
+  background-color: $color-green!important;
+}
+.leaui-bg-blue{
+  color:#fff;
+  background-color: $color-blue!important;
+}
+.leaui-bg-black{
+  color:#fff;
+  background-color: $color!important;
+}
+.leaui-bg-yellow{
+  color:#fff;
+  background-color: $color-yellow!important;
+}
+.leaui-bg-theme{
+  color:#fff;
+  background-color: $theme-color !important;
+}
+.bg-white{
+  background-color: #fff !important;
+}

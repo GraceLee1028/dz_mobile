@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+    <meta name="renderer" content="webkit">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="format-detection" content="telephone=no,email=no">
+    <title>创建限时打折活动</title>
+    <link rel="shortcut icon" href="">
+    <link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.2/css/sm.min.css">
+    <link rel="stylesheet" href="../../css/common.css">
+</head>
+<body>
+<div class="page page-current c-act-wrapper">
+    <form class="form-inline c-form">
+        <div class="form-group">
+            <label class="lea-col-4">活动标签</label>
+            <div class="lea-col-8">
+                <input type="text" id="tag" readonly="readonly" class="form-control" placeholder="显示在宝贝详情页">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="lea-col-4">开始时间</label>
+            <div class="lea-col-8">
+                <input type="text" class="form-control" id="startTime" value="2017-12-13 10:00" placeholder="请选择开始时间">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="lea-col-4">结束时间</label>
+            <div class="lea-col-8">
+                <input type="text" value="2017-12-13 10:00" id="endTime" class="form-control" placeholder="请选择结束时间">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="lea-col-4">活动范围</label>
+            <div class="lea-col-8">
+                <input type="text" id="range" value="部分参与" class="form-control" placeholder="请选择活动范围">
+            </div>
+        </div>
+        <div class="form-group no-border">
+            <label class="lea-col-4">备注</label>
+            <div class="lea-col-8">
+                <textarea class="form-control" rows="3" placeholder="显示在宝贝详情页"></textarea>
+            </div>
+        </div>
+        <div class="btn-group">
+            <button type="button" class="btn">取消</button>
+            <button type="button" class="btn btn-primary">创建</button>
+        </div>
+    </form>
+</div>
+
+</body>
+<script src="../../plugins/template-web.js"></script>
+<script src="../../plugins/layer_mobile/layer.js"></script>
+<script src="../../plugins/zepto.min.js"></script>
+<!--<script type='text/javascript' src='//g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>-->
+<script type='text/javascript' src='../../plugins/sm.js?2017121306' charset='utf-8'></script>
+<script src="../../plugins/common.js?2017121912"></script>
+<!--当前js-->
+<script src="../../js/create.js?2017121904"></script>
+<script src="../../js/dz/create.js?2017121901"></script>
+</html>

@@ -1,0 +1,207 @@
+$small-size:14px;
+$font-size:16px;
+$big-size:16px;
+$bigger-size:18px;
+$note-color:rgb(226,113,37);
+$px5:.25rem;
+$px10:.5rem;
+$px12:.6rem;
+$px15:.75rem;
+$radius:3px;
+$color: #333;
+$border-color:#efefef;
+$border:1px solid $border-color;
+$line-height:1.42857143;
+$time:.3s;
+$theme-color:rgb(0,135,255);
+$theme-hover-color:rgb(0,125,255);
+$bg-opacity:rgba(0,0,0,.3);
+$bg: rgb(239,239,239);
+$black-light:#666;
+$gray:#c2c2c2;
+$gray-light:#f2f2f2;
+$gray-hover:#b2b2b2;
+$color-disabled:#e2e2e2;
+/*different color */
+$link:rgb(0,135,255);
+$visited:rgb(0,120,255);
+$color-green:#009688;//color green
+$color-yellow:#f0ad4e; //
+$c-yellow-hover: #e3992f;
+$color-blue:rgb(64,150,231);
+$c-blue-hover: #0c8aff;
+$color-link:#01AAED;
+$color-danger:#ed5565;
+$c-hover-danger:#e84355;
+@mixin fixed-top($top:0){
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+}
+@mixin font-dpr($font-size){
+  font-size: $font-size;
+  [data-dpr="2"] &{
+    font-size: $font-size * 2;
+  }
+  [data-dpr="3"] &{
+    font-size: $font-size * 3;
+  }
+}
+@mixin no-wrap{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+@mixin radius($radius:3px){
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+@mixin ul-reset{
+  list-style: none;
+  padding:0;
+  margin:0;
+  li{
+    padding:0;
+    margin:0;
+    list-style-image: none;
+    list-style-type: none;
+  }
+}
+@mixin link-color($normal,$hover:$normal,$visited:$normal){
+  color: $normal;
+  &:hover{color: $hover;}
+  &:visited{color: $hover;}
+}
+@mixin transform-all($trans-val){
+  -webkit-transform: $trans-val;
+  -moz-transform: $trans-val;
+  -ms-transform: $trans-val;
+  -o-transform: $trans-val;
+  transform: $trans-val;
+}
+@mixin transform-rotate($degree){
+  @include transform-all($trans-val:rotate($degree));
+}
+@mixin transform-translate($x,$y){
+  @include transform-all($trans-val:translate($x,$y));
+}
+@mixin transform-scale($size){
+  @include transform-all($trans-val:scale($size));
+}
+@mixin transition($property:all,$time:.5s,$func:linear){
+  -webkit-transition: $property $time $func;
+  -moz-transition: $property $time $func;
+  -ms-transition: $property $time $func;
+  -o-transition: $property $time $func;
+  transition: $property $time $func;
+}
+@mixin animation($animation){
+  -webkit-animation:$animation;
+  -o-animation: $animation;
+  animation: $animation;
+}
+@mixin animation-pro($property,$value){
+  -webkit-animation-#{$property}: $value;
+  -moz-animation-#{$property}: $value;
+  -o-animation-#{$property}: $value;
+  animation-#{$property}: $value;
+}
+@mixin clear-float{
+  &:before,&:after{
+    content:"";
+    display:table;
+  }
+  &:after{
+    clear:both;
+  }
+}
+//@mixin bg-opacity($opacity:.5){
+//  background: rgb(0,0,0); /*The Fallback color*/
+//  background: rgba(0, 0, 0,$opacity);
+//  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=1,startColorstr=#80000000,endColorstr=#80000000)"; /*Filter for IE8 */
+//  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=1,startColorstr=#80000000, endColorstr=#80000000); /*Filter for older IEs */
+//}
+@mixin cursor-color($color,$textColor:#333){
+  color: $color;/*光标颜色*/
+  text-shadow: 0 0 0 $textColor;/*文本颜色*/
+  -webkit-text-fill-color: transparent;/*文本变成镂空*/
+  @supports (caret-color:red){
+    caret-color:$color;/*光标颜色*/
+    color:$textColor;
+  }
+}
+@mixin placeholder($color){
+  color:$color;
+  text-shadow: none;
+  -webkit-text-fill-color: initial;
+  text-overflow: ellipsis;
+}
+@mixin placeholder-color($color:#999) {
+  &::-webkit-input-placeholder{
+    @include placeholder($color)
+  }
+  &::-moz-placeholder{
+    @include placeholder($color)
+  }
+  &:-ms-input-placeholder{
+    @include placeholder($color)
+  }
+}
+@mixin user-select($select:none){
+  -webkit-user-select: $select;
+  -moz-user-select: $select;
+  -ms-user-select: $select;
+  user-select: $select;
+}
+/*multi overflow*/
+@mixin multi-overflow($line){
+  display: -webkit-box !important;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $line;
+  overflow: hidden;
+}
+//feature
+//transparent
+@mixin property-transparent($property,$color,$opacity){
+  #{$property}: transparentize($color,1 - $opacity);
+}
+@mixin opacity($num:1){
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100 * $num);
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100 * $num);
+  opacity: $num;
+}
+@mixin box-shadow($shadow){
+  -webkit-box-shadow: $shadow;
+  -moz-box-shadow: $shadow;
+  box-shadow: $shadow;
+}
+@mixin linear-gradient($startColor,$endColor,$degree:left){
+  background: $endColor;
+  background: -moz-linear-gradient($degree, $startColor, $endColor);
+  background: -webkit-linear-gradient($degree,$startColor,$endColor);
+  background: -o-linear-gradient($degree, $startColor, $endColor);
+}
+//caret triangle
+@mixin triangle-vertical($vertical:bottom,$size:6px){
+  border-left:$size solid transparent;
+  border-right:$size solid transparent;
+  border-#{$vertical}:$size solid #fff;
+}
+@mixin touch-action($action:manipulation){
+  -ms-touch-action:$action ;
+  touch-action: $action;
+}
+@mixin iconfont(){
+  font-family:"iconfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+@mixin box-sizing(){
+  -webkit-box-sizing: border-box!important;
+  -moz-box-sizing: border-box!important;
+  box-sizing: border-box!important;
+}
